@@ -34,10 +34,10 @@ $dashboard = $this->getDashboard();
     </div>
     <div class="clearfix"></div>
     <ul class="photo-list photo-list2">
-      <li><a href="#"><img src="<?=$this->getSkinUrl('images/photo-1.jpg');?>" alt=""></a></li>
-      <li><a href="#"><img src="<?=$this->getSkinUrl('images/photo-2.jpg');?>" alt=""></a></li>
-      <li><a href="#"><img src="<?=$this->getSkinUrl('images/photo-3.jpg');?>" alt=""></a></li>
-      <li><a href="#"><img src="<?=$this->getSkinUrl('images/photo-4.jpg');?>" alt=""></a></li>
+      <li><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('dashboard_banner_1')->toHtml(); ?></li>
+      <li><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('dashboard_banner_2')->toHtml(); ?></a></li>
+      <li><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('dashboard_banner_3')->toHtml(); ?></a></li>
+      <li><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('dashboard_banner_4')->toHtml(); ?></a></li>
     </ul>
 </div>
 <?php

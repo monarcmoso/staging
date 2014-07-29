@@ -39,12 +39,25 @@ class Intell_Customer_AccountController extends Mage_Customer_AccountController
 		
         if ($this->getRequest()->isPost()) {
             $login = $this->getRequest()->getPost('login');
+			
+			$isActive = Mage::getModel('customer/customer');
+			$isActive->loadByEmail($login['username']);
+			if($isActive->getisActive() == 0){
+				//return error message invalid
+				$session->addError($this->__('Invalid login or password.'));
+				$this->_redirect('*/*/');
+				return;
+			}
+			
             if (!empty($login['username']) && !empty($login['password'])) {
                 try {
                     $session->login($login['username'], $login['password']);
                     if ($session->getCustomer()->getIsJustConfirmed()) {
                         $this->_welcomeCustomer($session->getCustomer(), true);
                     }
+                    
+					//do the survey here
+					Mage::helper('login')->logSurvey();
                 } catch (Mage_Core_Exception $e) {
                     switch ($e->getCode()) {
                         case Mage_Customer_Model_Customer::EXCEPTION_EMAIL_NOT_CONFIRMED:

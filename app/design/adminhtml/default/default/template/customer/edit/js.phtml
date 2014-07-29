@@ -30,4 +30,14 @@ function saveAndContinueEdit(urlTemplate) {
         var url = template.evaluate({tab_id:customer_info_tabsJsTabs.activeTab.id});
         editForm.submit(url);
 }
+function disableUser(id){
+	new Ajax.Request('/admin/customer/disableUser', {    // url of the controller
+		method: 'POST',
+		parameters: {id:id}, //parameter is  color  & its value is  number[verified]
+		onComplete: function(transport) {
+		  //alert(transport.responseText);// response from the controller will get alerted.
+		  window.location.reload();
+		}
+	});
+}
 </script>

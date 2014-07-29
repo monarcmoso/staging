@@ -10,7 +10,8 @@
 	background-image:none !important;
 }
 .customer-account-create .col-main, 
-.customer-account-login .col-main, 
+.customer-account-login .col-main,
+.checkout-onepage-index .col-main,  
 .customer-account-forgotpassword .col-main,
 .customer-account-resetpassword .col-main,
 .profile-settings-index .col-main,
@@ -162,7 +163,9 @@
 .points-reward-index .right-content,
 .points-invitation-index .right-content,
 .sales-order-history .right-content,
-.points-invitation-list .right-content{
+.points-invitation-list .right-content,
+.sales-order-view .right-content,
+.profile-notifications-index .right-content{
     background: url("../../images/v-line.png") repeat-y scroll left top rgba(0, 0, 0, 0) !important;
     padding-left:13px !important;
     width: 750px;
@@ -388,5 +391,12 @@
 }
 .profile-index-index .timeline{
 	width:535px;
+}
+.cms-index-index .review-col iframe{
+	float:left;
+}
+.welcome_banner
+{
+	width:100%;
 }
 /*input[type="radio"].validation-passed+h3{ color:#267DB7; }*/ 

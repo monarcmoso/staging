@@ -217,5 +217,24 @@ js(document).ready(function(){
 			js(this).removeClass("expanded");
 		  }
 	 });
-
+	 
+	 js('#home').on('click', function ( e ) {
+	    js.fn.custombox( this, {
+	        effect:         'fade',
+	        position:       'center',
+	        customClass:    'customslide',
+	        speed:          200,
+	        overlayClose:	false
+	    });
+	    e.preventDefault();
+	});
+	
+	js("#home").trigger('click');
+	js('.banner').unslider({
+		fluid: false,
+		dots: true,
+		speed: 500,
+		slideTransitionEffect: 'fade'
+	});
+	
 }); // end of document ready

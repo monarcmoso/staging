@@ -836,4 +836,26 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $data['account'] = $this->_filterDates($data['account'], array('dob'));
         return $data;
     }
+	
+	public function disableUserAction()
+	{
+		if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' )
+		{
+			try {
+				$writeConnection = Mage::getSingleton('core/resource')->getConnection('core_write');
+				$query = "UPDATE customer_entity SET is_active = '0' WHERE entity_id = ".(int) $this->getRequest()->getPost('id');
+				$writeConnection->query($query);
+				Mage::getSingleton('adminhtml/session')->addSuccess('You have successfully disable this user account.');
+				echo json_encode(true);
+			}
+			catch (Exception $exception){
+				Mage::getSingleton('adminhtml/session')->addError('Error updating user. Please contact the administrator.');
+			    echo json_encode(false);
+			}
+		}
+		else{
+			Mage::app()->getResponse()->setRedirect(Mage::getUrl('/'));
+		}
+	
+	}
 }

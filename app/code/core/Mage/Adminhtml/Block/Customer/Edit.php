@@ -46,7 +46,13 @@ class Mage_Adminhtml_Block_Customer_Edit extends Mage_Adminhtml_Block_Widget_For
                 'class' => 'add',
             ), 0);
         }
-
+			
+	    $this->_addButton('disable_user', array(
+	        'label'     => Mage::helper('customer')->__('Disable User'),
+	        'class' => 'disable_user',
+	        'onclick'   => 'disableUser('.$this->getCustomerId().')',
+	    ));
+		
         parent::__construct();
 
         $this->_updateButton('save', 'label', Mage::helper('customer')->__('Save Customer'));

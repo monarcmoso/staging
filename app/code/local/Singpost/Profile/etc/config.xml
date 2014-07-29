@@ -59,6 +59,11 @@
             </profile_read>
         </resources>
         <blocks>
+        	<!-- <adminhtml>
+				<rewrite>
+					<customer_edit>Singpost_Profile_Block_Adminhtml_Customer_Edit</customer_edit>
+				</rewrite>
+			</adminhtml> -->
             <profile>
                 <class>Singpost_Profile_Block</class>
             </profile>

@@ -38,7 +38,7 @@ abstract class Mage_Checkout_Controller_Action extends Mage_Core_Controller_Fron
      * @param bool $addErrors - add error messages?
      * @return bool
      */
-    protected function _preDispatchValidateCustomer($redirect = true, $addErrors = true)
+    protected function _preDispatchValidateCustomer($redirect = false, $addErrors = true)
     {
         $customer = Mage::getSingleton('customer/session')->getCustomer();
         if ($customer && $customer->getId()) {

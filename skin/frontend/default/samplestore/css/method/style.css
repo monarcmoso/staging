@@ -3407,3 +3407,50 @@ label.medium {
 	background: #fff;
 	opacity: 1;
 }
+.p-small p a.button, a.button {
+    background-color: #5ed0fc;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px auto;
+    padding: 5px 20px;
+    text-align: center;
+}
+.p-small p a {
+    color: #5ed0fc;
+}
+.p-small p a.button, a.button {
+    background-color: #5ed0fc;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px auto;
+    padding: 5px 20px;
+    text-align: center;
+}
+.button:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: #59595c !important;
+}
+.emphasise {
+    background-color: #59595c;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 5px;
+    padding: 2px 8px;
+    text-shadow: 1px 1px 0 #000;
+}
+.status-button {
+    background: url("../../images/status-but.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin-right: 5px;
+    width: 18px;
+}
